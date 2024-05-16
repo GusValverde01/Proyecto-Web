@@ -1,0 +1,323 @@
+:root{
+    --blanco: #ffffff;
+    --negro: #000000;
+    --gris: #e1e1e1;
+    --principal: #1a5276;
+
+    --fuenteHeader: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,*:before,*:after{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/*GLOBALES PARA EL PROYECTO*/
+
+.contenedor{
+    width: min(90%, 120rem);
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3,h4{
+    font-family: var(--fuenteHeader);
+    line-height: 1.2;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+h2{
+    font-size: 3.2rem;
+}
+
+h3{
+    font-size: 2.8rem;
+}
+
+h4{
+    font-size: 2.2rem;
+}
+
+img{
+    max-width: 100%;
+}
+
+.no-margin{
+    margin: 0;
+}
+
+/*FIN DE GLOBALES*/
+
+/*HEADER*/
+
+.header{
+    background-color: var(--principal);
+}
+
+.barra{
+  display: flex;
+  justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
+  align-items: center; /* Centra verticalmente los elementos */
+  padding: 10px 20px; 
+}
+
+.logo{
+    color: var(--blanco);
+}
+
+.logo-nombre{
+    font-weight: 100;
+}
+
+.logo__span{
+    font-weight: 900;
+}
+
+.navegacion__enlace{
+    color: var(--blanco);
+
+}
+/*FIN HEADER*/
+
+/*IMAGEN DE FONDO*/
+
+.img-fondo{
+    background-image: url(../img/img3-portada.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    /*Imagen tenue poner lo siguiente*/
+    position: relative;
+}
+
+.presentacion{
+    /*Imagen tenue de fondo con RGBA*/
+    /*Ultimo con escala de 0 - 1*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    /*Centrar contenido*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.presentacion h2{
+    font-size: 4rem;
+    color: var(--blanco);
+ 
+}
+
+/*Texto a lado de imagen*/
+.ubicacion{
+    display: flex;
+    align-items: flex-end;
+    color: var(--blanco);
+    padding-bottom: 2rem;
+}
+
+.presentacion a{
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-decoration: none;
+    color: var(--blanco);
+    background-color: var(--secundario);
+    /*Necesario para el hover*/
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    /*Mejorar botón*/
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0.5rem;
+}
+
+/*Proporciona color resaltante en la barra   */
+.presentacion a:hover{
+    background-color: var(--blanco);
+    color: var(--principal);
+    cursor: pointer;
+}
+/*Diseño Responsive*/
+@media (min-width: 768px){
+    .img-fondo{
+        width: auto;
+    }
+}
+/*FIN IMAGEN*/
+
+
+/*PARTE MAIN*/
+.contenido-principal{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 4rem;
+}
+
+.articulo{
+    border-bottom: 3px solid var(--gris);
+    margin-bottom: 2rem;
+}
+
+.articulo:last-of-type{
+    border: none;
+    margin-bottom: 0;
+}
+
+.boton{
+    display: block;
+    font-family: var(--fuenteHeader);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    border: none;
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+.boton--primario{
+    background-color: var(--negro);
+}
+
+.boton--secundario{
+    background-color: var(--principal);
+}
+
+.servicios{
+    list-style: none;
+}
+
+.aside-servicios{
+    border-bottom: 2px solid var(--gris);
+    margin-bottom: 2rem;
+}
+
+.aside-servicios:last-of-type{
+    border: none;
+    margin-bottom: 0;
+}
+
+.aside-h4{
+    font-family: var(--fuenteHeader);
+    font-weight: bold;
+}
+
+.aside-p__precio{
+    font-weight: normal;
+}
+.aside-p__precio, 
+.aside-p__info{
+    font-size: 1.8rem;
+}
+
+.footer{
+    background-color: var(--negro);
+    padding-bottom: 3rem;
+    margin-top: 4rem;
+}
+
+/*FIN MAIN*/
+
+/*PARTE NOSOTROS*/
+.centrar-texto{
+    text-align: center;
+}
+
+.sobre-nosotros__imagen{
+    margin-top: 2rem;
+    
+}
+.img-nosotros{
+    display: block;
+    margin: 0 auto;
+    width: 50rem;
+}
+/*FIN NOSOTROS*/
+
+/*Servicios*/
+.servicio{
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris);
+}
+
+@media (min-width: 768px){
+    .servicio{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+}
+
+.servicio:last-of-type{
+    border: none;
+}
+
+.servicio__label{
+    font-family: var(--fuenteHeader);
+    font-weight: bold;
+    font-size: 2rem;
+}
+.servicio__info{
+    font-weight: normal;
+    font-size: 2rem;
+}
+
+.servicio__imagen{
+    margin-top: 5.5rem;
+}
+
+/*FIn servicios*/
+.info-h4{
+    margin-bottom: 3rem;
+}
+
+/*CONTACTO*/
+.formulario{
+    background-color: var(--blanco);
+    margin: 0 auto;
+    width: 95%;
+    padding: 3rem;
+}
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+}
+.campo__label{
+    flex: 0 0 9rem;
+    text-align: right;
+    padding-right: 2rem;
+}
+.campo__f{
+    flex: 1;
+    border: 1px solid var(--gris);
+}
+.campo__f-textarea{
+    height: 20rem;
+}
+/*FIN CONTACTO*/
